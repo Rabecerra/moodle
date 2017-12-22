@@ -49,6 +49,7 @@ $string['bulkcompletiontracking_help'] = '<strong>None:</strong> Do not indicate
 <strong>Manual:</strong> Students can manually mark the activity as completed
 
 <strong>With condition(s):</strong> Show activity as complete when conditions are met';
+$string['bulkcompletionwarningtext'] = '<strong>Updating completion settings will erase existing completion data and may cause confusion. Thus completion settings should not be changed here unless absolutely necessary.</strong>';
 $string['checkall'] = 'Check or uncheck all activities and resources';
 $string['checkallsection'] = 'Check or uncheck all activities and resources in the following section: {$a}';
 $string['checkactivity'] = 'Checkbox for activity / resource: {$a}';
