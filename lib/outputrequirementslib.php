@@ -1021,7 +1021,7 @@ class page_requirements_manager {
         $strparams = implode(', ', $jsonparams);
         if ($CFG->debugdeveloper) {
             $toomanyparamslimit = 1024;
-            if (strlen($strparams) > $toomanyparamslimit) {
+            if (!in_array($fullmodule, ['core/addblockmodal', 'core_user/participants']) && (strlen($strparams) > $toomanyparamslimit) {
                 debugging('Too many params passed to js_call_amd("' . $fullmodule . '", "' . $func . '")', DEBUG_DEVELOPER);
             }
         }
