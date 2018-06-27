@@ -22,6 +22,10 @@
     font-size: 24px;
     width: auto;
 }
+
+section#region-main div.m-t-2.m-b-1 .row .col-md-4 {
+    min-height: 8em;
+}
 /** Prevent user notifications overlapping with region main settings menu */
 #user-notifications {
     display: block;
