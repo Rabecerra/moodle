@@ -225,3 +225,18 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+/**
+ * Avoid delay in the grader page.
+ */
+.path-grade-report-grader a,
+.path-grade-report-grader area,
+.path-grade-report-grader button,
+.path-grade-report-grader [role="button"],
+.path-grade-report-grader input,
+.path-grade-report-grader label,
+.path-grade-report-grader select,
+.path-grade-report-grader summary,
+.path-grade-report-grader textarea {
+    touch-action: auto;
+}
