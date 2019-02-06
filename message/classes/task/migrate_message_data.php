@@ -70,6 +70,11 @@ class migrate_message_data extends \core\task\adhoc_task {
                      WHERE useridfrom = ?";
             $users = $users + $DB->get_records_sql($sql, [$userid, $userid]);
             if (!empty($users)) {
+                $locktype = 'core_message_migrate_data';
+
+                // Get an instance of the currently configured lock factory.
+                $lockfactory = \core\lock\lock_config::get_lock_factory($locktype);
+                
                 // Loop through each user and migrate the data.
                 foreach ($users as $otheruserid => $user) {
                     $ids = [$userid, $otheruserid];
@@ -78,10 +83,6 @@ class migrate_message_data extends \core\task\adhoc_task {
 
                     // Set the lock data.
                     $timeout = 5; // In seconds.
-                    $locktype = 'core_message_migrate_data';
-
-                    // Get an instance of the currently configured lock factory.
-                    $lockfactory = \core\lock\lock_config::get_lock_factory($locktype);
 
                     // See if we can grab this lock.
                     if ($lock = $lockfactory->get_lock($key, $timeout)) {
